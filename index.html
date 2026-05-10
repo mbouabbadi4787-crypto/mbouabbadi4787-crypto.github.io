@@ -368,13 +368,17 @@
 
     @media (max-width: 920px) {
       .hero-wrap        { grid-template-columns: 1fr; }
-      .photo-col        { display: none; }
+      .photo-col        { display: flex; order: -1; margin-bottom: 1rem; margin-top: 2rem; } /* ← changé */
       .about-grid       { grid-template-columns: 1fr; gap: 2.5rem; }
       .skills-grid      { grid-template-columns: 1fr; }
       .full             { grid-column: 1; }
       .nav-ul           { display: none; }
       .nav-burger       { display: flex; }
       .contact-wrapper  { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 920px) {
+      .photo-frame { width: 220px; height: 220px; }
+      .photo-rings      { inset: -8px; }
     }
     @media (max-width: 600px) {
       .sec { padding: 68px 0; }
