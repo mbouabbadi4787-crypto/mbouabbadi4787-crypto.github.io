@@ -117,7 +117,7 @@
     .ico-link { width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.7); font-size: .95rem; text-decoration: none; transition: .25s var(--ease); }
     .ico-link:hover { border-color: var(--v2); color: #fff; background: rgba(155,89,182,.35); transform: translateY(-3px); }
 
-    /* ── PHOTO — nouveau style ── */
+    /* ── PHOTO ── */
     .photo-col {
       position: relative;
       animation: fadeUp .8s .2s ease both;
@@ -125,8 +125,6 @@
       align-items: center;
       justify-content: center;
     }
-
-    /* Cercles décoratifs animés en arrière-plan */
     .photo-rings {
       position: absolute;
       inset: -30px;
@@ -154,50 +152,21 @@
       animation-duration: 18s;
     }
     @keyframes spinRing { to { transform: rotate(360deg); } }
-
-    /* Wrapper hexagonal / cercle */
     .photo-frame {
-      position: relative;
-      z-index: 1;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      padding: 5px;
+      position: relative; z-index: 1;
+      width: 360px; height: 360px;
+      border-radius: 50%; padding: 5px;
       background: var(--grad);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.08),
-        0 20px 60px rgba(155,89,182,.45),
-        0 0 80px rgba(233,30,140,.2);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 20px 60px rgba(155,89,182,.45), 0 0 80px rgba(233,30,140,.2);
       transition: transform .4s var(--ease), box-shadow .4s var(--ease);
     }
     .photo-frame:hover {
       transform: scale(1.04);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.12),
-        0 28px 70px rgba(155,89,182,.6),
-        0 0 100px rgba(233,30,140,.35);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 28px 70px rgba(155,89,182,.6), 0 0 100px rgba(233,30,140,.35);
     }
-    .photo-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      overflow: hidden;
-      background: #1a0a2e;
-      border: 3px solid rgba(255,255,255,.12);
-    }
-    .photo-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      filter: brightness(1.05) contrast(1.05);
-      transition: transform .5s var(--ease), filter .4s;
-    }
-    .photo-frame:hover .photo-inner img {
-      transform: scale(1.06);
-      filter: brightness(1.1) contrast(1.08);
-    }
+    .photo-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #1a0a2e; border: 3px solid rgba(255,255,255,.12); }
+    .photo-inner img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: brightness(1.05) contrast(1.05); transition: transform .5s var(--ease), filter .4s; }
+    .photo-frame:hover .photo-inner img { transform: scale(1.06); filter: brightness(1.1) contrast(1.08); }
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:none} }
 
@@ -245,120 +214,29 @@
     .tl-card.open .tl-arr { transform: rotate(180deg); color: var(--v2); }
     .tl-body { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line2); font-size: .9rem; color: var(--ink2); line-height: 1.78; font-weight: 400; }
 
-    /* ── CONTACT RÉEL ── */
-    .contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    align-items: start;
-    max-width: 700px;
-    }
-    .contact-info h3 {
-      font-family: var(--font-h);
-      font-size: 1.4rem; font-weight: 700;
-      color: var(--ink); margin-bottom: .8rem;
-    }
-    .contact-info p {
-      font-size: .95rem; color: var(--ink2);
-      line-height: 1.8; margin-bottom: 1.8rem;
-    }
-    .contact-links { display: flex; flex-direction: column; gap: .7rem; }
-    .clink {
-      display: flex; align-items: center; gap: .8rem;
-      padding: .8rem 1.1rem;
-      background: var(--bg4);
-      border: 1.5px solid var(--line2);
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: .22s var(--ease);
-      color: var(--ink2);
-    }
-    .clink:hover { border-color: rgba(155,89,182,.45); background: #fff; transform: translateX(4px); box-shadow: 0 4px 16px rgba(155,89,182,.12); }
-    .clink-ico { width: 34px; height: 34px; border-radius: 8px; background: rgba(155,89,182,.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .clink-ico i { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: .88rem; }
-    .clink-text { font-size: .88rem; font-weight: 600; }
-
-    /* Formulaire réel */
+    /* ── CONTACT ── */
+    .contact-wrapper { display: grid; grid-template-columns: 1fr; gap: 0; align-items: start; max-width: 700px; }
     .real-form { display: flex; flex-direction: column; gap: 1.2rem; }
     .field-group { display: flex; flex-direction: column; gap: .35rem; }
-    .field-group label {
-      font-size: .78rem; font-weight: 700;
-      color: var(--v2); letter-spacing: .03em;
-      text-transform: uppercase;
-    }
+    .field-group label { font-size: .78rem; font-weight: 700; color: var(--v2); letter-spacing: .03em; text-transform: uppercase; }
     .field-group input,
-    .field-group textarea {
-      width: 100%; padding: .9rem 1.15rem;
-      background: var(--bg4);
-      border: 1.5px solid rgba(155,89,182,.22);
-      border-radius: 10px;
-      color: var(--ink);
-      font-size: .95rem;
-      font-family: var(--font-b);
-      font-weight: 500;
-      outline: none;
-      transition: border-color .25s, box-shadow .25s, background .25s;
-      resize: vertical;
-    }
+    .field-group textarea { width: 100%; padding: .9rem 1.15rem; background: var(--bg4); border: 1.5px solid rgba(155,89,182,.22); border-radius: 10px; color: var(--ink); font-size: .95rem; font-family: var(--font-b); font-weight: 500; outline: none; transition: border-color .25s, box-shadow .25s, background .25s; resize: vertical; }
     .field-group input:focus,
-    .field-group textarea:focus {
-      border-color: var(--v);
-      box-shadow: 0 0 0 3px rgba(155,89,182,.12);
-      background: #fff;
-    }
+    .field-group textarea:focus { border-color: var(--v); box-shadow: 0 0 0 3px rgba(155,89,182,.12); background: #fff; }
     .field-group input::placeholder,
     .field-group textarea::placeholder { color: var(--ink3); font-weight: 400; }
-
-    .submit-btn {
-      display: inline-flex; align-items: center; gap: .55rem;
-      padding: .95rem 2.2rem; border-radius: 10px; border: none;
-      background: var(--grad); color: #fff;
-      font-size: .95rem; font-weight: 700;
-      font-family: var(--font-b); cursor: pointer;
-      box-shadow: 0 4px 22px rgba(155,89,182,.3);
-      transition: transform .25s, box-shadow .25s, filter .25s;
-      align-self: flex-start;
-    }
+    .submit-btn { display: inline-flex; align-items: center; gap: .55rem; padding: .95rem 2.2rem; border-radius: 10px; border: none; background: var(--grad); color: #fff; font-size: .95rem; font-weight: 700; font-family: var(--font-b); cursor: pointer; box-shadow: 0 4px 22px rgba(155,89,182,.3); transition: transform .25s, box-shadow .25s, filter .25s; align-self: flex-start; }
     .submit-btn:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 8px 32px rgba(155,89,182,.45); }
     .submit-btn:disabled { opacity: .7; cursor: wait; }
-
-    .form-note {
-      font-size: .78rem; color: var(--ink3);
-      display: flex; align-items: center; gap: .4rem;
-      margin-top: -.4rem;
-    }
+    .form-note { font-size: .78rem; color: var(--ink3); display: flex; align-items: center; gap: .4rem; margin-top: -.4rem; }
     .form-note i { color: var(--v); }
-
-    /* Message succès */
-    .form-success {
-      display: none;
-      flex-direction: column; align-items: center;
-      text-align: center; padding: 2.5rem 2rem;
-      border-radius: var(--radius2);
-      border: 1.5px solid rgba(155,89,182,.2);
-      background: rgba(155,89,182,.04);
-    }
+    .form-success { display: none; flex-direction: column; align-items: center; text-align: center; padding: 2.5rem 2rem; border-radius: var(--radius2); border: 1.5px solid rgba(155,89,182,.2); background: rgba(155,89,182,.04); }
     .form-success.visible { display: flex; }
-    .success-icon {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--grad);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; color: #fff;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 8px 24px rgba(155,89,182,.35);
-      animation: popIn .4s ease;
-    }
+    .success-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; margin-bottom: 1.2rem; box-shadow: 0 8px 24px rgba(155,89,182,.35); animation: popIn .4s ease; }
     @keyframes popIn { from{transform:scale(0)} to{transform:scale(1)} }
     .form-success h3 { font-family: var(--font-h); font-size: 1.3rem; font-weight: 700; color: var(--ink); margin-bottom: .4rem; }
     .form-success p  { font-size: .92rem; color: var(--ink2); font-weight: 500; }
-
-    /* Message erreur */
-    .form-error {
-      display: none; padding: .8rem 1.1rem; border-radius: 8px;
-      background: rgba(239,68,68,.06);
-      border: 1px solid rgba(239,68,68,.25);
-      font-size: .85rem; color: #dc2626; font-weight: 600;
-    }
+    .form-error { display: none; padding: .8rem 1.1rem; border-radius: 8px; background: rgba(239,68,68,.06); border: 1px solid rgba(239,68,68,.25); font-size: .85rem; color: #dc2626; font-weight: 600; margin-bottom: 1rem; }
     .form-error.visible { display: block; }
 
     #proj-root { position: relative; z-index: 1; }
@@ -368,7 +246,7 @@
 
     @media (max-width: 920px) {
       .hero-wrap        { grid-template-columns: 1fr; }
-      .photo-col        { display: flex; order: -1; margin-bottom: 1rem; margin-top: 2rem; } /* ← changé */
+      .photo-col        { display: flex; order: -1; margin-bottom: 1rem; margin-top: 2rem; }
       .about-grid       { grid-template-columns: 1fr; gap: 2.5rem; }
       .skills-grid      { grid-template-columns: 1fr; }
       .full             { grid-column: 1; }
@@ -378,7 +256,7 @@
     }
     @media (max-width: 920px) {
       .photo-frame { width: 220px; height: 220px; }
-      .photo-rings      { inset: -8px; }
+      .photo-rings { inset: -8px; }
     }
     @media (max-width: 600px) {
       .sec { padding: 68px 0; }
@@ -419,7 +297,7 @@
       <div>
         <h1 class="hero-h1">Malak<span class="grad-name">Bouabbadi</span></h1>
         <p class="hero-role">Étudiante L2 Informatique &nbsp;·&nbsp; IA &amp; Data Science — FSSM</p>
-        <p class="hero-bio">Passionnée par l'intelligence artificielle et l'analyse de données, je construis des projets concrets allant du développement web au machine learning. Curieuse, rigoureuse et toujours en veille sur les dernières avancées technologiques.</p>
+        <p class="hero-bio">Étudiante en Informatique à la FSSM, je me passionne pour le développement web et l'intelligence artificielle. J'aime apprendre en construisant des projets réels et relever de nouveaux défis technologiques.</p>
         <div class="kpis">
           <div class="kpi"><div class="kpi-n">2<em>+</em></div><div class="kpi-l">Années d'étude</div></div>
           <div class="kpi"><div class="kpi-n">3<em>+</em></div><div class="kpi-l">Projets réalisés</div></div>
@@ -427,18 +305,22 @@
         </div>
         <div class="hero-cta">
           <a href="#projets" class="btn btn-fill"><i class="fa fa-code"></i>&nbsp;Voir mes projets</a>
-          <a href="#contact" class="btn" style="color:#fff;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);">
-            <i class="fa fa-envelope"></i>&nbsp;Me contacter
-          </a>
         </div>
 
+        <div class="hero-links">
+          <a href="mailto:m.bouabbadi4787@uca.ac.ma" class="ico-link" title="Email">
+            <i class="fa fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/malak-bouabbadi-39614b408" target="_blank" class="ico-link" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/mbouabbadi4787-crypto" target="_blank" class="ico-link" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
       </div>
-
-      <!-- ── NOUVELLE PHOTO ── -->
+      </div>
       <div class="photo-col">
-        <!-- Anneaux rotatifs -->
         <div class="photo-rings"></div>
-        <!-- Cadre principal -->
         <div class="photo-frame">
           <div class="photo-inner">
             <img src="photo.jpeg" alt="Malak Bouabbadi">
@@ -452,7 +334,7 @@
 <!-- ══════════ ABOUT ══════════ -->
 <div id="about" class="sec sec-light">
   <div class="page">
-    <div class="rv"><h2 class="sec-title">À <em>propos</em> de moi</h2></div>
+    <div class="rv"><h2 class="sec-title">Qui <em>suis-je</em> ?</h2></div>
     <div class="about-grid rv d1">
       <div class="about-body">
         <p>Je m'appelle <strong>Malak Bouabbadi</strong>, étudiante en deuxième année de Licence Informatique à la <strong>FSSM</strong> (Faculté des Sciences Semlalia), avec une spécialisation en <strong>Intelligence Artificielle et Data Science</strong>.</p>
@@ -526,7 +408,7 @@
 <!-- ══════════ FORMATION ══════════ -->
 <div id="formation" class="sec sec-light">
   <div class="page">
-    <div class="rv"><h2 class="sec-title">Ma <em>formation</em></h2></div>
+    <div class="rv"><h2 class="sec-title">Mon <em>Parcours académique</em></h2></div>
     <div class="tl rv d1">
       <div class="tl-item">
         <div class="tl-dot"></div>
@@ -574,88 +456,22 @@
   </div>
 </section>
 
-<!-- ══════════ CONTACT RÉEL (Formspree) ══════════ -->
+<!-- ══════════ CONTACT ══════════ -->
 <div id="contact" class="sec sec-light">
   <div class="page">
     <div class="rv"><h2 class="sec-title">Échangeons <em>ensemble</em></h2></div>
     <div class="contact-wrapper rv d1">
-
-      <!-- Infos de contact -->
-   
-
-      <!-- Formulaire réel via Formspree -->
-      <div>
-        <!-- ✅ Succès -->
-        <div class="form-success" id="form-success">
-          <div class="success-icon"><i class="fa fa-check"></i></div>
-          <h3>Message envoyé !</h3>
-          <p>Merci ! Je vous répondrai dans les meilleurs délais à <strong>m.bouabbadi4787@uca.ac.ma</strong></p>
-        </div>
-
-        <!-- ❌ Erreur réseau -->
-        <div class="form-error" id="form-error">
-          <i class="fa fa-exclamation-circle"></i>
-          Une erreur s'est produite. Réessayez ou contactez-moi directement par email.
-        </div>
-
-        <!--
-          FORMSPREE : remplace YOUR_FORM_ID par ton vrai ID après inscription sur formspree.io
-          Étapes :
-            1. Va sur https://formspree.io
-            2. Crée un compte gratuit avec m.bouabbadi4787@uca.ac.ma
-            3. Crée un nouveau formulaire → copie l'ID (ex: xpwzkyab)
-            4. Remplace YOUR_FORM_ID ci-dessous par cet ID
-        -->
-        <form
-          class="real-form"
-          id="contact-form"
-          action="https://formspree.io/f/xbdwpdpb"
-          method="POST"
-        >
-          <!-- Champ caché pour personnaliser l'objet de l'email reçu -->
-          <input type="hidden" name="_subject" value="Nouveau message depuis votre CV — Malak Bouabbadi">
-          <!-- Anti-spam honeypot -->
-          <input type="text" name="_gotcha" style="display:none">
-
-          <div class="field-group">
-            <label for="name">Nom complet</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
-          </div>
-
-          <div class="field-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
-          </div>
-
-          <div class="field-group">
-            <label for="sujet">Sujet</label>
-            <input type="text" id="sujet" name="sujet" placeholder="Ex : Collaboration, Question, Stage…">
-          </div>
-
-          <div class="field-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Votre message…" required></textarea>
-          </div>
-
-          <p class="form-note">
-            <i class="fa fa-lock"></i>
-            Vos données sont confidentielles et ne seront jamais partagées.
-          </p>
-
-          <button type="submit" class="submit-btn" id="submit-btn">
-            <i class="fa fa-paper-plane"></i> Envoyer le message
-          </button>
-        </form>
-      </div>
+      <!-- Formulaire rendu par le composant React ContactForm -->
+      <div id="contact-root"></div>
     </div>
   </div>
 </div>
 
 <footer>
-  <p>© 2025 <a href="#hero">Malak Bouabbadi</a> &nbsp;·&nbsp;</p>
+  <p>© 2026 <a href="#hero">Malak Bouabbadi</a> &nbsp;·&nbsp;</p>
 </footer>
 
-<!-- ══════════ SCRIPTS ══════════ -->
+<!-- ══════════ SCRIPTS jQuery ══════════ -->
 <script>
 $(function () {
   /* Nav scroll */
@@ -703,48 +519,14 @@ $(function () {
     $('[data-tl]').not(this).each(function () { $(this).find('.tl-body').slideUp(260); $(this).removeClass('open'); });
     $body.is(':visible') ? ($body.slideUp(260), $card.removeClass('open')) : ($body.slideDown(300), $card.addClass('open'));
   });
-
-  /* ══ FORMULAIRE RÉEL — soumission AJAX vers Formspree ══ */
-  $('#contact-form').on('submit', function (e) {
-    e.preventDefault();
-    var $btn = $('#submit-btn');
-    var $success = $('#form-success');
-    var $error   = $('#form-error');
-    var $form    = $(this);
-
-    // Masquer les messages précédents
-    $success.removeClass('visible');
-    $error.removeClass('visible');
-
-    // Désactiver le bouton pendant l'envoi
-    $btn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Envoi en cours…');
-
-    $.ajax({
-      url:  $form.attr('action'),
-      type: 'POST',
-      data: $form.serialize(),
-      headers: { 'Accept': 'application/json' },
-      success: function () {
-        // ✅ Succès : afficher le message de confirmation
-        $form.hide();
-        $success.addClass('visible');
-      },
-      error: function () {
-        // ❌ Erreur réseau ou ID Formspree incorrect
-        $error.addClass('visible');
-        $btn.prop('disabled', false).html('<i class="fa fa-paper-plane"></i> Envoyer le message');
-        $form.css('animation','shake .4s ease');
-        setTimeout(function () { $form.css('animation',''); }, 400);
-      }
-    });
-  });
 });
 </script>
 
-<!-- ══════════ REACT — Projets ══════════ -->
+<!-- ══════════ REACT — Projets + Formulaire Contact ══════════ -->
 <script type="text/babel">
 const G = 'linear-gradient(135deg,#9b59b6,#e91e8c)';
 
+/* ── TechBadge ── */
 const TechBadge = ({ t }) => {
   const MAP = {
     'Python':'#7c3aad','HTML5':'#c0390f','CSS3':'#2563eb',
@@ -762,6 +544,7 @@ const TechBadge = ({ t }) => {
   );
 };
 
+/* ── ProjectCard ── */
 const ProjectCard = ({ title, desc, techs, github, demo, icon }) => {
   const [hov, setHov] = React.useState(false);
   return (
@@ -806,12 +589,13 @@ const ProjectCard = ({ title, desc, techs, github, demo, icon }) => {
 };
 
 const PROJECTS = [
-  { id:1, title:"Jeu d'aventure en C++", desc:"Développement d'un jeu d'aventure mettant en scène une étudiante traversant plusieurs niveaux scolaires avec différents obstacles et défis interactifs en console.", techs:['C++','POO','Logique de jeu'], github:null, demo:'https://youtube.com/shorts/Ujg_i4APzXY?si=wG9Moi-ASKQGjXlm', icon:'fa-gamepad' },
+  { id:1, title:"Jeu d'aventure en C++", desc:"Développement d'un jeu d'aventure mettant en scène une étudiante traversant plusieurs niveaux scolaires avec différents obstacles et défis interactifs en console.", techs:['C++','POO','Logique de jeu'], github:null, demo:'https://youtu.be/GK2Mk_e50rQ?si=Hv2WxOfsae3TlbhC', icon:'fa-gamepad' },
   { id:2, title:'Site — Coupe du Monde 2026', desc:"Développement d'un site web interactif regroupant les informations essentielles de la Coupe du Monde 2026 : matchs, stades, billets, villes hôtes, hébergements et conseils touristiques.", techs:['HTML5','CSS3','JavaScript'], github:null, demo:'https://hajarmalak2026.github.io/WC26NEWS/index.html', icon:'fa-futbol' },
-  { id:3, title:'CV Interactif Personnel', desc:'CV en ligne avec HTML5, CSS3, jQuery et ReactJS. Animations au scroll, composants React réutilisables, formulaire validé — déployé sur GitHub Pages.', techs:['HTML5','CSS3','jQuery','ReactJS','GitHub Pages'], github:null, demo:null, icon:'fa-id-card' },
+  { id:3, title:'CV Interactif Personnel', desc:'CV en ligne avec HTML5, CSS3, jQuery et ReactJS. Animations au scroll, composants React réutilisables, formulaire validé — déployé sur GitHub Pages.', techs:['HTML5','CSS3','jQuery','ReactJS','GitHub Pages'], github:'https://github.com/mbouabbadi4787-crypto/mbouabbadi4787-crypto.github.io', demo:'https://mbouabbadi4787-crypto.github.io', icon:'fa-id-card' },
 ];
 const catMap = { 1:'C++', 2:'Web', 3:'Web' };
 
+/* ── ProjectsSection ── */
 const ProjectsSection = () => {
   const [active, setActive] = React.useState('Tous');
   const list = active === 'Tous' ? PROJECTS : PROJECTS.filter(p => catMap[p.id] === active);
@@ -836,7 +620,96 @@ const ProjectsSection = () => {
   );
 };
 
+/* ── ContactForm — composant React ── */
+const ContactForm = () => {
+  const [fields, setFields] = React.useState({ name:'', email:'', sujet:'', message:'' });
+  const [status, setStatus] = React.useState('idle'); // idle | loading | success | error
+
+  const handleChange = (e) => {
+    setFields({ ...fields, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!fields.name.trim() || !fields.message.trim()) {
+      alert('Veuillez remplir tous les champs.');
+      return;
+    }
+    if (!emailRegex.test(fields.email)) {
+      alert('Adresse email invalide.');
+      return;
+    }
+
+    setStatus('loading');
+
+    try {
+      const res = await fetch('https://formspree.io/f/xbdwpdpb', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      });
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  if (status === 'success') return (
+    <div className="form-success visible">
+      <div className="success-icon"><i className="fa fa-check"></i></div>
+      <h3>Message envoyé !</h3>
+      <p>Merci ! Je vous répondrai dans les meilleurs délais à <strong>m.bouabbadi4787@uca.ac.ma</strong></p>
+    </div>
+  );
+
+  return (
+    <div>
+      {status === 'error' && (
+        <div className="form-error visible">
+          <i className="fa fa-exclamation-circle"></i> Une erreur s'est produite. Réessayez ou contactez-moi directement par email.
+        </div>
+      )}
+      <div className="real-form">
+        <div className="field-group">
+          <label>Nom complet</label>
+          <input type="text" name="name" placeholder="Votre nom et prénom" value={fields.name} onChange={handleChange} required />
+        </div>
+        <div className="field-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="votre@email.com" value={fields.email} onChange={handleChange} required />
+        </div>
+        <div className="field-group">
+          <label>Sujet</label>
+          <input type="text" name="sujet" placeholder="Ex : Collaboration, Question, Stage…" value={fields.sujet} onChange={handleChange} />
+        </div>
+        <div className="field-group">
+          <label>Message</label>
+          <textarea name="message" rows="6" placeholder="Votre message…" value={fields.message} onChange={handleChange} required />
+        </div>
+        <p className="form-note">
+          <i className="fa fa-lock"></i> Vos données sont confidentielles et ne seront jamais partagées.
+        </p>
+        <button className="submit-btn" onClick={handleSubmit} disabled={status === 'loading'}>
+          {status === 'loading'
+            ? <><i className="fa fa-spinner fa-spin"></i> Envoi en cours…</>
+            : <><i className="fa fa-paper-plane"></i> Envoyer le message</>
+          }
+        </button>
+      </div>
+    </div>
+  );
+};
+
+/* ── Montage React ── */
 ReactDOM.createRoot(document.getElementById('proj-root')).render(<ProjectsSection />);
+ReactDOM.createRoot(document.getElementById('contact-root')).render(<ContactForm />);
 </script>
 </body>
 </html>
